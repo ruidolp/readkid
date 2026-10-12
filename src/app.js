@@ -1,3 +1,5 @@
+import storyData from '../content/cuento.json';
+
 const app = document.querySelector('#app');
 
 let story;
@@ -181,18 +183,11 @@ function renderEnd() {
   document.querySelector('#read-again').addEventListener('click', startStory);
 }
 
-async function boot() {
-  try {
-    const response = await fetch('/content/cuento.json');
-    if (!response.ok) throw new Error('No se pudo cargar el cuento');
-    story = await response.json();
-    loadVoices();
-    window.speechSynthesis?.addEventListener?.('voiceschanged', loadVoices);
-    renderStart();
-  } catch (error) {
-    app.innerHTML = `<p class="error">No pudimos abrir el cuento. Revisa el archivo <code>content/cuento.json</code>.</p>`;
-    console.error(error);
-  }
+function boot() {
+  story = storyData;
+  loadVoices();
+  window.speechSynthesis?.addEventListener?.('voiceschanged', loadVoices);
+  renderStart();
 }
 
 boot();
