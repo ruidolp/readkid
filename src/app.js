@@ -6,6 +6,9 @@ let story;
 let position = { page: 0, fragment: 0 };
 let speaking = false;
 let voices = [];
+let recognition = null;
+let shouldListen = false;
+const activatedHints = new Set();
 
 const voiceOptions = {
   alegre: { rate: 1.08, pitch: 1.45 },
@@ -40,6 +43,102 @@ function escapeHtml(text) {
   return element.innerHTML;
 }
 
+function normalize(text) {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9ñ\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function hintId(hint) {
+  return `${position.page}-${position.fragment}-${hint.frase}`;
+}
+
+function formatNarration(fragment) {
+  let text = escapeHtml(fragment.texto);
+  const phrases = [...new Set((fragment.disparadores ?? []).map((hint) => hint.frase))]
+    .sort((first, second) => second.length - first.length);
+
+  for (const phrase of phrases) {
+    const escapedPhrase = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    text = text.replace(new RegExp(`(${escapedPhrase})`, 'gi'), '<strong class="voice-hint">$1</strong>');
+  }
+  return text;
+}
+
+function speechRecognitionConstructor() {
+  return window.SpeechRecognition || window.webkitSpeechRecognition;
+}
+
+function stopListening() {
+  shouldListen = false;
+  if (recognition) {
+    recognition.onend = null;
+    recognition.abort();
+    recognition = null;
+  }
+}
+
+function triggerEffect(hint) {
+  const id = hintId(hint);
+  if (activatedHints.has(id)) return;
+  activatedHints.add(id);
+
+  const illustration = document.querySelector('.illustration-placeholder');
+  const caption = document.querySelector('#effect-caption');
+  const status = document.querySelector('#status');
+  illustration?.classList.add('effect-active', `effect-${hint.efecto}`);
+  if (caption) caption.textContent = `✦ ${hint.etiqueta ?? '¡Efecto activado!'}`;
+  if (status) status.textContent = `¡Escuché “${hint.frase}”!`;
+}
+
+function startListening(fragment) {
+  const hints = fragment.disparadores ?? [];
+  if (fragment.lector !== 'adulto' || hints.length === 0) return;
+
+  const Recognition = speechRecognitionConstructor();
+  const status = document.querySelector('#status');
+  if (!Recognition) {
+    if (status) status.textContent = 'Tu navegador no reconoce voz. Puedes continuar normalmente.';
+    return;
+  }
+
+  stopListening();
+  shouldListen = true;
+  recognition = new Recognition();
+  recognition.lang = 'es-CL';
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.maxAlternatives = 1;
+
+  recognition.onresult = (event) => {
+    const heard = normalize(Array.from(event.results).map((result) => result[0].transcript).join(' '));
+    for (const hint of hints) {
+      if (heard.includes(normalize(hint.frase))) triggerEffect(hint);
+    }
+  };
+  recognition.onerror = (event) => {
+    if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+      shouldListen = false;
+      if (status) status.textContent = 'No se activó el micrófono. Puedes seguir leyendo y avanzar manualmente.';
+    }
+  };
+  recognition.onend = () => {
+    if (shouldListen && getCurrent() === fragment) {
+      try { recognition.start(); } catch { /* ya está iniciándose */ }
+    }
+  };
+  try {
+    recognition.start();
+    if (status) status.textContent = 'Escuchando las palabras destacadas…';
+  } catch {
+    if (status) status.textContent = 'Toca continuar y vuelve a intentarlo si quieres usar el micrófono.';
+  }
+}
+
 function renderStart() {
   app.innerHTML = `
     <section class="welcome-shell">
@@ -62,6 +161,7 @@ function renderStart() {
 }
 
 function renderStory() {
+  stopListening();
   const page = story.paginas[position.page];
   const fragment = getCurrent();
   const character = characterFor(fragment.personaje);
@@ -69,6 +169,7 @@ function renderStory() {
   const progress = ((completedFragments() + 1) / totalFragments()) * 100;
   const isLast = position.page === story.paginas.length - 1 && position.fragment === page.fragmentos.length - 1;
   const speaker = appReads ? character?.nombre ?? 'Personaje' : 'Tú lees';
+  const hasHints = !appReads && (fragment.disparadores?.length ?? 0) > 0;
 
   app.innerHTML = `
     <section class="reader-shell">
@@ -78,12 +179,13 @@ function renderStory() {
           <div class="progress-meta"><span>Página ${page.numero} de ${story.paginas.length}</span><span>${completedFragments() + 1} / ${totalFragments()}</span></div>
           <div class="progress-track"><div class="progress-value" style="width: ${progress}%"></div></div>
         </div>
-        <button class="icon-button sound-button ${speaking ? 'is-active' : ''}" id="repeat" type="button" aria-label="Repetir diálogo" ${appReads ? '' : 'disabled'}>♬</button>
+        <button class="icon-button sound-button ${speaking ? 'is-active' : ''}" id="repeat" type="button" aria-label="${appReads ? 'Repetir diálogo' : 'Activar reconocimiento de voz'}" ${appReads || hasHints ? '' : 'disabled'}>${appReads ? '♬' : '◉'}</button>
       </header>
 
       <div class="illustration-placeholder" aria-label="Espacio reservado para la ilustración de la página ${page.numero}">
         <span class="placeholder-sun">☀</span>
         <p>Ilustración de esta página</p>
+        <span class="effect-caption" id="effect-caption"></span>
       </div>
 
       <article class="text-card ${appReads ? 'app-reading' : 'adult-reading'}">
@@ -92,11 +194,11 @@ function renderStory() {
           <div class="avatar" aria-hidden="true">${appReads ? speaker.slice(0, 1).toUpperCase() : '♥'}</div>
           <h2>${escapeHtml(speaker)}</h2>
         </div>
-        <p class="story-text">${escapeHtml(fragment.texto)}</p>
+        <p class="story-text">${appReads ? escapeHtml(fragment.texto) : formatNarration(fragment)}</p>
       </article>
 
       <footer class="reader-footer">
-        <p class="status" id="status">${appReads ? 'Escucha el diálogo antes de continuar.' : 'Léelo a tu ritmo y continúa cuando termines.'}</p>
+        <p class="status" id="status">${appReads ? 'Escucha el diálogo antes de continuar.' : hasHints ? 'Preparando el micrófono…' : 'Léelo a tu ritmo y continúa cuando termines.'}</p>
         <button class="primary-button continue-button" id="continue" type="button" ${speaking ? 'disabled' : ''}>
           <span>${isLast ? 'Terminar cuento' : appReads ? 'Continuar' : 'Ya leí esta parte'}</span><span aria-hidden="true">${isLast ? '✓' : '→'}</span>
         </button>
@@ -104,13 +206,15 @@ function renderStory() {
     </section>`;
 
   document.querySelector('#restart').addEventListener('click', () => {
+    stopListening();
     window.speechSynthesis?.cancel();
     speaking = false;
     position = { page: 0, fragment: 0 };
     renderStart();
   });
   document.querySelector('#continue').addEventListener('click', next);
-  document.querySelector('#repeat').addEventListener('click', () => speak(fragment));
+  document.querySelector('#repeat').addEventListener('click', () => appReads ? speak(fragment) : startListening(fragment));
+  if (hasHints) startListening(fragment);
 }
 
 function updateSpeakingState(isSpeaking) {
@@ -148,6 +252,7 @@ function speak(fragment) {
 
 function next() {
   if (speaking) return;
+  stopListening();
   const page = story.paginas[position.page];
   const isLast = position.page === story.paginas.length - 1 && position.fragment === page.fragmentos.length - 1;
   if (isLast) {
@@ -171,6 +276,7 @@ function startStory() {
 }
 
 function renderEnd() {
+  stopListening();
   window.speechSynthesis?.cancel();
   app.innerHTML = `
     <section class="welcome-shell end-screen">

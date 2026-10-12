@@ -15,7 +15,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, sentado en su cama con manta amarilla. Su mamá acomoda la almohada. Habitación acogedora, luz cálida y estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "La noche llegó despacito a la casa de Milo. Su mamá acomodó la almohada y levantó la manta amarilla. Milo se metió en la cama, dejando sus orejas afuera.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "La noche llegó despacito a la casa de Milo. Su mamá acomodó la almohada y levantó la manta amarilla. Milo se metió en la cama, dejando sus orejas afuera.", "accion": "esperar_toque", "disparadores": [{ "frase": "noche llegó despacito", "efecto": "estrellas", "etiqueta": "La noche se llena de estrellas" }, { "frase": "manta amarilla", "efecto": "manta", "etiqueta": "La manta arropa a Milo" }] },
         { "lector": "app", "personaje": "milo", "texto": "Qué calentito. Aquí caben mis orejas… ¡y un abrazo!", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá sonrió y se acostó a su lado, bien cerquita.", "accion": "esperar_toque" }
       ]
@@ -25,7 +25,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, junto a su mamá en la cama. Al fondo se ven bloques de madera caídos sobre una alfombra. Manta amarilla, luz cálida y estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "Milo recordó la torre que había construido esa tarde. Había puesto un bloque, luego otro… y todos terminaron en el suelo. Bajó un poquito las orejas.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Milo recordó la torre que había construido esa tarde. Había puesto un bloque, luego otro… y todos terminaron en el suelo. Bajó un poquito las orejas.", "accion": "esperar_toque", "disparadores": [{ "frase": "todos terminaron en el suelo", "efecto": "bloques", "etiqueta": "Los bloques caen suavemente" }] },
         { "lector": "app", "personaje": "milo", "texto": "Mi torre se cayó. Yo quería que quedara de pie.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá le acarició la cabeza. Una torre caída no cambiaba cuánto lo quería.", "accion": "esperar_toque" }
       ]
@@ -35,7 +35,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. La mamá coneja abraza con ternura a Milo, conejito blanco con pijama azul, bajo una manta amarilla. Primer plano cálido, expresiones tranquilas y estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "Lo quería cuando algo le salía bien y cuando necesitaba volver a intentarlo. Cuando reía y cuando estaba triste. Milo siempre tenía un lugar entre sus brazos.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Lo quería cuando algo le salía bien y cuando necesitaba volver a intentarlo. Cuando reía y cuando estaba triste. Milo siempre tenía un lugar entre sus brazos.", "accion": "esperar_toque", "disparadores": [{ "frase": "entre sus brazos", "efecto": "abrazo", "etiqueta": "Un abrazo cálido aparece" }] },
         { "lector": "app", "personaje": "milo", "texto": "Aunque me equivoque, sigo siendo yo. Y me siguen queriendo.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Se acomodó contra su mamá. Sus orejas volvieron a relajarse.", "accion": "esperar_toque" }
       ]
@@ -45,7 +45,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, sonríe junto a su mamá en la cama. Sobre ellos aparece una nube imaginaria con una zanahoria navegando como un barco. Estilo acuarela, colores suaves.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "Entonces recordó algo divertido: esa tarde había imaginado un barco hecho de zanahoria. Milo tenía sus propias ideas, su propia risa y una manera especial de mirar las cosas.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Entonces recordó algo divertido: esa tarde había imaginado un barco hecho de zanahoria. Milo tenía sus propias ideas, su propia risa y una manera especial de mirar las cosas.", "accion": "esperar_toque", "disparadores": [{ "frase": "barco hecho de zanahoria", "efecto": "barco", "etiqueta": "¡El barco de zanahoria navega!" }] },
         { "lector": "app", "personaje": "milo", "texto": "¡Un barco de zanahoria! Me gusta imaginar cosas.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá sonrió con él. Qué lindo era conocer sus ideas.", "accion": "esperar_toque" }
       ]
@@ -55,7 +55,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, recibe un beso en la frente de su mamá. Manta amarilla y lámpara tenue. Ambiente amoroso, detalles suaves y estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá le dio un beso en la frente y otro en la punta de la nariz. Milo sintió un calorcito en el pecho, como si el abrazo también estuviera adentro.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá le dio un beso en la frente y otro en la punta de la nariz. Milo sintió un calorcito en el pecho, como si el abrazo también estuviera adentro.", "accion": "esperar_toque", "disparadores": [{ "frase": "calorcito en el pecho", "efecto": "corazon", "etiqueta": "El abrazo brilla en su corazón" }] },
         { "lector": "app", "personaje": "milo", "texto": "Este abrazo me lo guardo aquí, cerquita del corazón.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Y puso su pequeña patita sobre el pijama.", "accion": "esperar_toque" }
       ]
@@ -65,7 +65,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, se despereza suavemente bajo la manta amarilla. Su mamá permanece acostada a su lado. Luz nocturna tenue, ambiente tranquilo y estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "Sus patitas habían jugado mucho. Sus orejas habían escuchado cuentos. Ahora todo su cuerpo podía descansar. Milo soltó un suspiro largo y se hundió un poquito en la almohada.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Sus patitas habían jugado mucho. Sus orejas habían escuchado cuentos. Ahora todo su cuerpo podía descansar. Milo soltó un suspiro largo y se hundió un poquito en la almohada.", "accion": "esperar_toque", "disparadores": [{ "frase": "suspiro largo", "efecto": "descanso", "etiqueta": "Todo se vuelve tranquilo" }] },
         { "lector": "app", "personaje": "milo", "texto": "Por hoy, ya jugué. Ahora me toca descansar.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "La manta lo arropó hasta los hombros.", "accion": "esperar_toque" }
       ]
@@ -75,7 +75,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, casi dormido junto a su mamá. Manta amarilla, luna visible por la ventana y habitación bañada en luz suave. Estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "La habitación quedó quietita. Milo escuchó la respiración tranquila de su mamá. Mañana habría tiempo para jugar, para aprender y para probar otra torre. Esta noche tenía todo el cariño que necesitaba.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "La habitación quedó quietita. Milo escuchó la respiración tranquila de su mamá. Mañana habría tiempo para jugar, para aprender y para probar otra torre. Esta noche tenía todo el cariño que necesitaba.", "accion": "esperar_toque", "disparadores": [{ "frase": "tiempo para jugar", "efecto": "luna", "etiqueta": "La luna acompaña sus sueños" }] },
         { "lector": "app", "personaje": "milo", "texto": "Mañana lo intentaré otra vez. Ahora estoy muy a gustito.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Y sus ojos empezaron a cerrarse.", "accion": "esperar_toque" }
       ]
@@ -85,7 +85,7 @@
       "imagen": null,
       "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, duerme sonriendo bajo la manta amarilla. Su mamá descansa a su lado con una mano sobre la suya. Luz tenue, sensación de amor y estilo acuarela.",
       "fragmentos": [
-        { "lector": "adulto", "personaje": "Narrador", "texto": "Antes de dormirse, Milo apretó suavemente la mano de su mamá. El abrazo seguía allí: en la manta, en su pecho y en esa mano que acompañaba la suya.", "accion": "esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Antes de dormirse, Milo apretó suavemente la mano de su mamá. El abrazo seguía allí: en la manta, en su pecho y en esa mano que acompañaba la suya.", "accion": "esperar_toque", "disparadores": [{ "frase": "apretó suavemente la mano", "efecto": "brillo", "etiqueta": "El cariño se queda con Milo" }] },
         { "lector": "app", "personaje": "milo", "texto": "Buenas noches, mamá. Te quiero mucho.", "accion": "reproducir_audio_y_esperar_toque" },
         { "lector": "adulto", "personaje": "Narrador", "texto": "Y tú, mi amor, también eres muy importante para mí. Te quiero tal como eres. Descansa, mi pequeño. Mi cariño se queda contigo.", "accion": "esperar_toque" }
       ]
