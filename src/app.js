@@ -1,6 +1,9 @@
 import storyData from '../content/cuento.json';
 
 const app = document.querySelector('#app');
+const effectSound = new Audio('/sounds/effect-chime.wav');
+effectSound.preload = 'auto';
+effectSound.volume = 0.3;
 
 let story;
 let position = { page: 0, fragment: 0 };
@@ -86,6 +89,8 @@ function triggerEffect(hint) {
   const id = hintId(hint);
   if (activatedHints.has(id)) return;
   activatedHints.add(id);
+  effectSound.currentTime = 0;
+  effectSound.play().catch(() => {});
 
   const illustration = document.querySelector('.illustration-placeholder');
   const caption = document.querySelector('#effect-caption');
