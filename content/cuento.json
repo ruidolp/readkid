@@ -1,0 +1,112 @@
+{
+  "id": "la-luz-de-luna",
+  "titulo": "La luz de Luna",
+  "subtitulo": "Un cuento para leer acompañados",
+  "edadRecomendada": "4 a 7 años",
+  "portada": {
+    "imagen": null,
+    "imagenPrompt": "Una luciérnaga cálida junto a un faro pequeño en la costa, ilustración infantil suave, vertical, sin texto"
+  },
+  "personajes": [
+    { "id": "luna", "nombre": "Luna", "voz": "alegre" },
+    { "id": "faro", "nombre": "El faro", "voz": "grave" },
+    { "id": "gaviota", "nombre": "Gaviota", "voz": "suave" }
+  ],
+  "paginas": [
+    {
+      "numero": 1,
+      "imagen": null,
+      "imagenPrompt": "Noche azul junto al mar y un faro pequeño, ilustración infantil vertical, sin texto",
+      "fragmentos": [
+        {
+          "lector": "adulto",
+          "personaje": "Narrador",
+          "texto": "En una costa tranquila vivía Luna, una luciérnaga que cada noche encendía su pequeña luz.",
+          "accion": "esperar_toque"
+        },
+        {
+          "lector": "app",
+          "personaje": "luna",
+          "texto": "¡Buenas noches, mar! Mi luz está lista para brillar.",
+          "accion": "reproducir_audio_y_esperar_toque"
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "imagen": null,
+      "imagenPrompt": "Un faro apagado y una pequeña luciérnaga dorada observándolo, noche costera, ilustración infantil vertical, sin texto",
+      "fragmentos": [
+        {
+          "lector": "adulto",
+          "personaje": "Narrador",
+          "texto": "Esa noche, Luna vio algo extraño: el gran faro de la bahía estaba apagado.",
+          "accion": "esperar_toque"
+        },
+        {
+          "lector": "app",
+          "personaje": "faro",
+          "texto": "Oh… mi luz se quedó dormida. Sin ella, los barcos no podrán verme.",
+          "accion": "reproducir_audio_y_esperar_toque"
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "imagen": null,
+      "imagenPrompt": "Una luciérnaga muy pequeña volando decidida hacia la cima de un faro, ilustración infantil vertical, sin texto",
+      "fragmentos": [
+        {
+          "lector": "adulto",
+          "personaje": "Narrador",
+          "texto": "Luna era diminuta junto al faro, pero tuvo una idea. Subió y subió hasta llegar a la ventana más alta.",
+          "accion": "esperar_toque"
+        },
+        {
+          "lector": "app",
+          "personaje": "luna",
+          "texto": "Mi luz no es muy grande, pero puedo compartirla contigo.",
+          "accion": "reproducir_audio_y_esperar_toque"
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "imagen": null,
+      "imagenPrompt": "Gaviotas y luciérnagas alrededor de un faro encendido, mar sereno de noche, ilustración infantil vertical, sin texto",
+      "fragmentos": [
+        {
+          "lector": "app",
+          "personaje": "gaviota",
+          "texto": "¡Yo también puedo ayudar! Llamaré a las demás luciérnagas.",
+          "accion": "reproducir_audio_y_esperar_toque"
+        },
+        {
+          "lector": "adulto",
+          "personaje": "Narrador",
+          "texto": "Pronto llegaron muchas luces pequeñas. Juntas, iluminaron el faro y guiaron a los barcos de vuelta a casa.",
+          "accion": "esperar_toque"
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "imagen": null,
+      "imagenPrompt": "Un faro brillante, muchas luciérnagas doradas y una luna grande sobre el mar, final feliz, ilustración infantil vertical, sin texto",
+      "fragmentos": [
+        {
+          "lector": "app",
+          "personaje": "faro",
+          "texto": "Gracias, Luna. A veces una luz pequeña puede hacer un camino enorme.",
+          "accion": "reproducir_audio_y_esperar_toque"
+        },
+        {
+          "lector": "adulto",
+          "personaje": "Narrador",
+          "texto": "Y desde entonces, Luna recordó que cuando todos ayudan, hasta la noche más oscura se llena de luz. Fin.",
+          "accion": "esperar_toque"
+        }
+      ]
+    }
+  ]
+}
