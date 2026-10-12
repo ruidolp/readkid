@@ -1,111 +1,93 @@
 {
-  "id": "la-luz-de-luna",
-  "titulo": "La luz de Luna",
-  "subtitulo": "Un cuento para leer acompañados",
-  "edadRecomendada": "4 a 7 años",
+  "id": "milo-el-abrazo-que-se-queda",
+  "titulo": "Milo y el abrazo que se queda",
+  "subtitulo": "Un cuento para leer acompañados antes de dormir",
   "portada": {
     "imagen": null,
-    "imagenPrompt": "Una luciérnaga cálida junto a un faro pequeño en la costa, ilustración infantil suave, vertical, sin texto"
+    "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, un pequeño conejito blanco con pijama azul, acurrucado bajo una manta amarilla junto a su mamá. Habitación acogedora, luna tras la ventana, colores suaves y luz cálida. Estilo acuarela."
   },
   "personajes": [
-    { "id": "luna", "nombre": "Luna", "voz": "alegre" },
-    { "id": "faro", "nombre": "El faro", "voz": "grave" },
-    { "id": "gaviota", "nombre": "Gaviota", "voz": "suave" }
+    { "id": "milo", "nombre": "Milo", "voz": "suave" }
   ],
   "paginas": [
     {
       "numero": 1,
       "imagen": null,
-      "imagenPrompt": "Noche azul junto al mar y un faro pequeño, ilustración infantil vertical, sin texto",
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, sentado en su cama con manta amarilla. Su mamá acomoda la almohada. Habitación acogedora, luz cálida y estilo acuarela.",
       "fragmentos": [
-        {
-          "lector": "adulto",
-          "personaje": "Narrador",
-          "texto": "En una costa tranquila vivía Luna, una luciérnaga que cada noche encendía su pequeña luz.",
-          "accion": "esperar_toque"
-        },
-        {
-          "lector": "app",
-          "personaje": "luna",
-          "texto": "¡Buenas noches, mar! Mi luz está lista para brillar.",
-          "accion": "reproducir_audio_y_esperar_toque"
-        }
+        { "lector": "adulto", "personaje": "Narrador", "texto": "La noche llegó despacito a la casa de Milo. Su mamá acomodó la almohada y levantó la manta amarilla. Milo se metió en la cama, dejando sus orejas afuera.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Qué calentito. Aquí caben mis orejas… ¡y un abrazo!", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá sonrió y se acostó a su lado, bien cerquita.", "accion": "esperar_toque" }
       ]
     },
     {
       "numero": 2,
       "imagen": null,
-      "imagenPrompt": "Un faro apagado y una pequeña luciérnaga dorada observándolo, noche costera, ilustración infantil vertical, sin texto",
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, junto a su mamá en la cama. Al fondo se ven bloques de madera caídos sobre una alfombra. Manta amarilla, luz cálida y estilo acuarela.",
       "fragmentos": [
-        {
-          "lector": "adulto",
-          "personaje": "Narrador",
-          "texto": "Esa noche, Luna vio algo extraño: el gran faro de la bahía estaba apagado.",
-          "accion": "esperar_toque"
-        },
-        {
-          "lector": "app",
-          "personaje": "faro",
-          "texto": "Oh… mi luz se quedó dormida. Sin ella, los barcos no podrán verme.",
-          "accion": "reproducir_audio_y_esperar_toque"
-        }
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Milo recordó la torre que había construido esa tarde. Había puesto un bloque, luego otro… y todos terminaron en el suelo. Bajó un poquito las orejas.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Mi torre se cayó. Yo quería que quedara de pie.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá le acarició la cabeza. Una torre caída no cambiaba cuánto lo quería.", "accion": "esperar_toque" }
       ]
     },
     {
       "numero": 3,
       "imagen": null,
-      "imagenPrompt": "Una luciérnaga muy pequeña volando decidida hacia la cima de un faro, ilustración infantil vertical, sin texto",
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. La mamá coneja abraza con ternura a Milo, conejito blanco con pijama azul, bajo una manta amarilla. Primer plano cálido, expresiones tranquilas y estilo acuarela.",
       "fragmentos": [
-        {
-          "lector": "adulto",
-          "personaje": "Narrador",
-          "texto": "Luna era diminuta junto al faro, pero tuvo una idea. Subió y subió hasta llegar a la ventana más alta.",
-          "accion": "esperar_toque"
-        },
-        {
-          "lector": "app",
-          "personaje": "luna",
-          "texto": "Mi luz no es muy grande, pero puedo compartirla contigo.",
-          "accion": "reproducir_audio_y_esperar_toque"
-        }
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Lo quería cuando algo le salía bien y cuando necesitaba volver a intentarlo. Cuando reía y cuando estaba triste. Milo siempre tenía un lugar entre sus brazos.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Aunque me equivoque, sigo siendo yo. Y me siguen queriendo.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Se acomodó contra su mamá. Sus orejas volvieron a relajarse.", "accion": "esperar_toque" }
       ]
     },
     {
       "numero": 4,
       "imagen": null,
-      "imagenPrompt": "Gaviotas y luciérnagas alrededor de un faro encendido, mar sereno de noche, ilustración infantil vertical, sin texto",
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, sonríe junto a su mamá en la cama. Sobre ellos aparece una nube imaginaria con una zanahoria navegando como un barco. Estilo acuarela, colores suaves.",
       "fragmentos": [
-        {
-          "lector": "app",
-          "personaje": "gaviota",
-          "texto": "¡Yo también puedo ayudar! Llamaré a las demás luciérnagas.",
-          "accion": "reproducir_audio_y_esperar_toque"
-        },
-        {
-          "lector": "adulto",
-          "personaje": "Narrador",
-          "texto": "Pronto llegaron muchas luces pequeñas. Juntas, iluminaron el faro y guiaron a los barcos de vuelta a casa.",
-          "accion": "esperar_toque"
-        }
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Entonces recordó algo divertido: esa tarde había imaginado un barco hecho de zanahoria. Milo tenía sus propias ideas, su propia risa y una manera especial de mirar las cosas.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "¡Un barco de zanahoria! Me gusta imaginar cosas.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá sonrió con él. Qué lindo era conocer sus ideas.", "accion": "esperar_toque" }
       ]
     },
     {
       "numero": 5,
       "imagen": null,
-      "imagenPrompt": "Un faro brillante, muchas luciérnagas doradas y una luna grande sobre el mar, final feliz, ilustración infantil vertical, sin texto",
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, recibe un beso en la frente de su mamá. Manta amarilla y lámpara tenue. Ambiente amoroso, detalles suaves y estilo acuarela.",
       "fragmentos": [
-        {
-          "lector": "app",
-          "personaje": "faro",
-          "texto": "Gracias, Luna. A veces una luz pequeña puede hacer un camino enorme.",
-          "accion": "reproducir_audio_y_esperar_toque"
-        },
-        {
-          "lector": "adulto",
-          "personaje": "Narrador",
-          "texto": "Y desde entonces, Luna recordó que cuando todos ayudan, hasta la noche más oscura se llena de luz. Fin.",
-          "accion": "esperar_toque"
-        }
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Su mamá le dio un beso en la frente y otro en la punta de la nariz. Milo sintió un calorcito en el pecho, como si el abrazo también estuviera adentro.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Este abrazo me lo guardo aquí, cerquita del corazón.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Y puso su pequeña patita sobre el pijama.", "accion": "esperar_toque" }
+      ]
+    },
+    {
+      "numero": 6,
+      "imagen": null,
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, se despereza suavemente bajo la manta amarilla. Su mamá permanece acostada a su lado. Luz nocturna tenue, ambiente tranquilo y estilo acuarela.",
+      "fragmentos": [
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Sus patitas habían jugado mucho. Sus orejas habían escuchado cuentos. Ahora todo su cuerpo podía descansar. Milo soltó un suspiro largo y se hundió un poquito en la almohada.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Por hoy, ya jugué. Ahora me toca descansar.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "La manta lo arropó hasta los hombros.", "accion": "esperar_toque" }
+      ]
+    },
+    {
+      "numero": 7,
+      "imagen": null,
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, casi dormido junto a su mamá. Manta amarilla, luna visible por la ventana y habitación bañada en luz suave. Estilo acuarela.",
+      "fragmentos": [
+        { "lector": "adulto", "personaje": "Narrador", "texto": "La habitación quedó quietita. Milo escuchó la respiración tranquila de su mamá. Mañana habría tiempo para jugar, para aprender y para probar otra torre. Esta noche tenía todo el cariño que necesitaba.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Mañana lo intentaré otra vez. Ahora estoy muy a gustito.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Y sus ojos empezaron a cerrarse.", "accion": "esperar_toque" }
+      ]
+    },
+    {
+      "numero": 8,
+      "imagen": null,
+      "imagenPrompt": "Ilustración infantil vertical, sin texto. Milo, conejito blanco con pijama azul, duerme sonriendo bajo la manta amarilla. Su mamá descansa a su lado con una mano sobre la suya. Luz tenue, sensación de amor y estilo acuarela.",
+      "fragmentos": [
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Antes de dormirse, Milo apretó suavemente la mano de su mamá. El abrazo seguía allí: en la manta, en su pecho y en esa mano que acompañaba la suya.", "accion": "esperar_toque" },
+        { "lector": "app", "personaje": "milo", "texto": "Buenas noches, mamá. Te quiero mucho.", "accion": "reproducir_audio_y_esperar_toque" },
+        { "lector": "adulto", "personaje": "Narrador", "texto": "Y tú, mi amor, también eres muy importante para mí. Te quiero tal como eres. Descansa, mi pequeño. Mi cariño se queda contigo.", "accion": "esperar_toque" }
       ]
     }
   ]

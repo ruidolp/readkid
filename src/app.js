@@ -49,7 +49,7 @@ function renderStart() {
       </div>
       <p class="eyebrow">CUENTO INTERACTIVO</p>
       <h1>${escapeHtml(story.titulo)}</h1>
-      <p class="subtitle">${escapeHtml(story.subtitulo)}</p>
+      <p class="subtitle">${escapeHtml(story.subtitulo ?? 'Un cuento para leer acompañados')}</p>
       <div class="reading-note"><span>◉</span> Tú lees la narración. Los personajes cobran voz.</div>
       <button class="primary-button start-button" id="start" type="button">
         <span>Comenzar cuento</span><span aria-hidden="true">→</span>
@@ -174,7 +174,7 @@ function renderEnd() {
     <section class="welcome-shell end-screen">
       <div class="end-icon" aria-hidden="true">✦</div>
       <p class="eyebrow">FIN DEL CUENTO</p>
-      <h1>Una luz compartida</h1>
+      <h1>${escapeHtml(story.titulo)}</h1>
       <p class="subtitle">Gracias por leer juntos.</p>
       <button class="primary-button start-button" id="read-again" type="button"><span>Leer otra vez</span><span aria-hidden="true">↻</span></button>
     </section>`;
